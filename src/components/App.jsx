@@ -3,25 +3,21 @@ import Header from "./Header";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-var cafeList;
-var listElement = [];
-var renderList;
+var data;
+var dataList;
 
 function App() {
-  const [list, setList] = useState('')
+  // For render cafe list
+  const [cafeList, setCafeList] = useState('')
+
   useEffect(() => {
     axios.get("http://localhost:8080/").then(function (response) {
-      cafeList = response.data;
-      // console.log(cafeList);
-      cafeList.forEach((element) => {
-        // console.log(element.name);
-        listElement.push(element);
-      });
-      console.log(listElement);
-      renderList = listElement.map((element) => {
+      data = response.data;
+      console.log(data);
+      dataList = data.map((element) => {
         return <li key={element.id}>{element.name}</li>;
       });
-      setList(renderList)
+      setCafeList(dataList)
     });
   }, []);
 
@@ -29,7 +25,7 @@ function App() {
     <>
       <Header />
       <div id="cafe-list" style={{ marginTop: "20px" }}>
-        <ul>{list}</ul>
+        <ul>{cafeList}</ul>
       </div>
     </>
   );
