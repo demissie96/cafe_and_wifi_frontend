@@ -2,6 +2,12 @@ a {
     text-decoration: none;
 }
 
+button {
+    background-color: transparent;
+    border: 0;
+    margin-bottom: 10px;
+}
+
 .cafe-box {
     position: relative;
     background-color: #EEF1FF;
