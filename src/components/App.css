@@ -1,4 +1,9 @@
+a {
+    text-decoration: none;
+}
+
 .cafe-box {
+    position: relative;
     background-color: #EEF1FF;
     border-radius: 10px;
 }
@@ -18,4 +23,5 @@
     text-align: end;
     right: 10px;
     padding-top: 10px;
+    width: 40px;
 }

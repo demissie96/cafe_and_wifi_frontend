@@ -19,57 +19,36 @@ function App() {
         return (
           <div className="row mb-3 text-center cafe-box" key={element.id}>
             <div className="modify-cafe">
-              <div>
-                <a>🗑️</a>
-              </div>
-              <div>
-                <a>📝</a>
-              </div>
+              <a target="_blank" title="Delete">🗑️</a>
+              <br />
+              <a target="_blank" title="Edit">📝</a>
             </div>
 
             <div className="col-md-3 themed-grid-col ">
               <div className="first-box">
-                <h4 className="cafe-box-element" id="cafe-name">
-                  {element.name}
-                </h4>
+                <h4 id="cafe-name">{element.name}</h4>
               </div>
             </div>
             <div className="col-md-3 themed-grid-col">
               <div className="second-box">
-                <a className="cafe-box-element" href={element.map_url}>
-                  Google Map
-                </a>
-                <div className="cafe-box-element" id="cafe-location">
-                  City: {element.location}
-                </div>
+                <a target="_blank" href={element.map_url}>Google Map</a>
+                <div id="cafe-location">{element.location}</div>
               </div>
             </div>
             <div className="col-md-3 themed-grid-col">
               <div className="third-box">
-                <div className="cafe-box-element">Wifi: {element.has_wifi}</div>
-                <div className="cafe-box-element">
-                  Take Calls: {element.can_take_calls}
-                </div>
-                <div className="cafe-box-element">
-                  Socket: {element.has_sockets}
-                </div>
-                <div className="cafe-box-element">
-                  Toilet: {element.has_toilet}
-                </div>
+                <div>Wifi: {element.has_wifi === 1 ? '✅' : '❌'}</div>
+                <div>Take Calls: {element.can_take_calls === 1 ? '✅' : '❌'}</div>
+                <div>Socket: {element.has_sockets === 1 ? '✅' : '❌'}</div>
+                <div>Toilet: {element.has_toilet === 1 ? '✅' : '❌'}</div>
               </div>
             </div>
             <div className="col-md-3 themed-grid-col">
               <div className="fourth-box">
-                <a className="cafe-box-element" href={element.img_url}>
-                  Image
-                </a>
+                <a target="_blank" href={element.img_url}>Image</a>
 
-                <div className="cafe-box-element" id="cafe-seats">
-                  Seats: {element.seats}
-                </div>
-                <div className="cafe-box-element" id="cafe-price">
-                  Coffee Price: {element.coffee_price}
-                </div>
+                <div id="cafe-seats">Seats: {element.seats}</div>
+                <div id="cafe-price">Coffee Price: {element.coffee_price}</div>
               </div>
             </div>
           </div>
