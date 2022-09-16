@@ -1,0 +1,21 @@
+.cafe-box {
+    background-color: #EEF1FF;
+    border-radius: 10px;
+}
+
+.col-md-3 {
+    margin: auto;
+}
+
+.first-box, .second-box, .third-box, .fourth-box {
+    display: block;
+    margin: 5px 10px 5px;
+    padding: auto 0 auto;
+}
+
+.modify-cafe {
+    position: absolute;
+    text-align: end;
+    right: 10px;
+    padding-top: 10px;
+}
