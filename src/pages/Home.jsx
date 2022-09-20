@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../components/Header";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./App.css";
+import "./Home.css";
 
 var data;
 var dataList;
 
-function App() {
+function Home() {
   // For render cafe list
   const [cafeList, setCafeList] = useState("");
 
@@ -100,11 +100,11 @@ function App() {
   return (
     <>
       <Header />
-      <div id="cafe-list" style={{ margin: "20px" }}>
+      <div id="cafe-list" style={{ margin: "80px 20px 20px" }}>
         <div>{cafeList}</div>
       </div>
     </>
   );
 }
 
-export default App;
+export default Home;
