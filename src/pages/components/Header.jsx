@@ -10,7 +10,7 @@ function Header() {
 
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             Cafe & Wifi ☕️
           </a>
           <button
