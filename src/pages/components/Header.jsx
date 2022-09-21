@@ -32,14 +32,23 @@ function Header(props) {
                   className="nav-link active"
                   aria-current="page"
                   href="/add-cafe"
-                  style={{ visibility: props.visibility }}
+                  style={{
+                    visibility: props.visibility,
+                    position:
+                      props.visibility === "hidden" ? "absolute" : "relative",
+                  }}
                 >
                   Add Cafe
                 </a>
               </li>
               <li className="nav-item">
                 <button
-                  style={{ margin: "0", visibility: props.visibility }}
+                  style={{
+                    margin: "0",
+                    visibility: props.visibility,
+                    position:
+                      props.visibility === "hidden" ? "absolute" : "relative",
+                  }}
                   className="nav-link"
                   onClick={() => ResetDatabase()}
                 >
