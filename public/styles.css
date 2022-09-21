@@ -1,3 +1,15 @@
+/* Color palette
+#290001 - darkest
+#87431D
+#C87941
+#DBCBBD - lightest
+*/
+
 html, body {
     min-width: 370px;
+    background-color: #C87941 !important;
+}
+
+.navbar {
+    background-color: #87431D !important;
 }

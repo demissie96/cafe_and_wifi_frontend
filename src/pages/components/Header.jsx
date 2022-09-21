@@ -1,13 +1,13 @@
 import React from "react";
 import { ResetDatabase } from "./Functions";
+import "./Header.css";
 
 function Header() {
   return (
     <>
       <nav
-        className="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
+        className="navbar navbar-expand-md navbar-dark fixed-top"
         aria-label="Fourth navbar example"
-
       >
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
@@ -54,7 +54,9 @@ function Header() {
                 >
                   GitHub Source Code
                 </a>
-                <ul className="dropdown-menu">
+                <ul
+                  className="dropdown-menu"
+                >
                   <li>
                     <a className="dropdown-item" href="#">
                       Backend (Node.js)
