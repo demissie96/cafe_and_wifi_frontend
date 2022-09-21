@@ -127,7 +127,7 @@ function AddCafe() {
             <div className="invalid-feedback">Coffee Price is required</div>
           </div>
           <br></br>
-          <button className="w-100 btn btn-outline-primary btn-lg" type="submit">
+          <button className="w-100 btn btn-primary btn-lg" type="submit">
             Add Cafe
           </button>
         </form>

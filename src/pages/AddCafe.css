@@ -1,18 +1,33 @@
-.btn-outline-primary {
-    color: #C84B31 !important;    
-    border-color: #C84B31 !important;
+.btn-primary {
+    color: #DBCBBD !important;    
+    border-color: #87431D !important;
+    background-color: #87431D !important;
     border-width: 2px;
     font-weight: bold;
 }
 
-.btn-outline-primary:hover {
-    color: #ECDBBA !important;
-    background-color: #C84B31 !important;
-    border-color: #C84B31 !important;
+.btn-primary:hover {
+    color: #DBCBBD !important;
+    background-color: #290001 !important;
+    border-color: #290001 !important;
 }
 
-.btn-outline-primary:focus,
-.btn-outline-primary.focus {
-    box-shadow: 0 0 0 .2rem #c84a317b !important;
-    background-color: #C84B31 !important;
+.btn-primary:focus,
+.btn-primary.focus {
+    box-shadow: 0 0 0 .2rem #2900017b !important;
+    background-color: #290001 !important;
+}
+
+body {
+    color: white;
+}
+
+.form-control, .form-control:focus, .form-check-input {
+    background-color: #DBCBBD;
+}
+
+.form-check-input:checked, .form-check-input:focus {
+    background-color: #290001;
+    box-shadow: 0 0 0 .2rem #2900017b;
+    border-color: #290001;
 }
