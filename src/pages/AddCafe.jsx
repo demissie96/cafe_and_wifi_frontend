@@ -62,7 +62,7 @@ function AddCafe() {
 
   return (
     <>
-      <Header />
+      <Header visibility="hidden"/>
       <div>
         <form id="form" onSubmit={(e) => AddNewCafe(e)} className={validated}>
           <div>

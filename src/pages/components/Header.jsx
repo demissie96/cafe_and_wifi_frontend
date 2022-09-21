@@ -2,7 +2,7 @@ import React from "react";
 import { ResetDatabase } from "./Functions";
 import "./Header.css";
 
-function Header() {
+function Header(props) {
   return (
     <>
       <nav
@@ -32,13 +32,14 @@ function Header() {
                   className="nav-link active"
                   aria-current="page"
                   href="/add-cafe"
+                  style={{ visibility: props.visibility }}
                 >
                   Add Cafe
                 </a>
               </li>
               <li className="nav-item">
                 <button
-                  style={{ margin: "0" }}
+                  style={{ margin: "0", visibility: props.visibility }}
                   className="nav-link"
                   onClick={() => ResetDatabase()}
                 >
@@ -54,9 +55,7 @@ function Header() {
                 >
                   GitHub Source Code
                 </a>
-                <ul
-                  className="dropdown-menu"
-                >
+                <ul className="dropdown-menu">
                   <li>
                     <a className="dropdown-item" href="#">
                       Backend (Node.js)

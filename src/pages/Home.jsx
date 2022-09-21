@@ -99,7 +99,7 @@ function Home() {
 
   return (
     <>
-      <Header />
+      <Header visibility="visible"/>
       <div id="cafe-list" style={{ margin: "80px 20px 20px" }}>
         <div>{cafeList}</div>
       </div>
