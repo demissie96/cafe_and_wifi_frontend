@@ -7,13 +7,7 @@ function AddCafe() {
     <>
       <Header />
       <div>
-        <form
-          style={{
-            margin: "80px auto 20px",
-            width: "400px",
-            padding: "0 20px 0",
-          }}
-        >
+        <form>
           <div>
             <label htmlFor="name" className="form-label">
               Name

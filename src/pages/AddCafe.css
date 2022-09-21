@@ -22,6 +22,12 @@ body {
     color: white;
 }
 
+form {
+    margin: 80px auto 20px;
+    width: 400px;
+    padding: 0 20px 0;
+}
+
 .form-control, .form-control:focus, .form-check-input {
     background-color: #DBCBBD;
 }
