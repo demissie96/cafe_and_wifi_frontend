@@ -1,10 +1,13 @@
 import React from "react";
 import Header from "./components/Header";
 import { useState } from "react";
+import axios from "axios";
 import "./AddCafe.css";
+import { useNavigate } from "react-router-dom";
 
 function AddCafe() {
   const [validated, setValidated] = useState("");
+  const navigate = useNavigate();
 
   function AddNewCafe(e) {
     e.preventDefault();
@@ -20,16 +23,41 @@ function AddCafe() {
     let seats = e.target.seats.value;
     let price = e.target.price.value;
 
-    console.log(`name: ${name}, 
-   location: ${location},
-   map_url: ${map_url},
-   image_url: ${image_url},
-   wifi: ${wifi}, 
-   socket: ${socket},
-   toilet: ${toilet}, 
-   take_calls: ${take_calls},
-   seats: ${seats},
-   price: ${price}`);
+    console.log(`name: ${name},
+     location: ${location},
+     map_url: ${map_url},
+     image_url: ${image_url},
+     wifi: ${wifi},
+     socket: ${socket},
+     toilet: ${toilet},
+     take_calls: ${take_calls},
+     seats: ${seats},
+     price: ${price}`);
+
+    axios
+      .post(
+        "http://localhost:8080/",
+        {},
+        {
+          headers: {
+            name: name,
+            location: location,
+            map_url: map_url,
+            img_url: image_url,
+            has_wifi: wifi ? 1 : 0,
+            has_sockets: socket ? 1 : 0,
+            has_toilet: toilet ? 1 : 0,
+            can_take_calls: take_calls ? 1 : 0,
+            seats: seats,
+            coffee_price: price,
+          },
+        }
+      )
+      .then(function (response) {
+        console.log("response: ********************");
+        console.log(response);
+        navigate("/");
+      });
   }
 
   return (
