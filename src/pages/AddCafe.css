@@ -12,8 +12,7 @@
     border-color: #290001 !important;
 }
 
-.btn-primary:focus,
-.btn-primary.focus {
+.btn-primary:active {
     box-shadow: 0 0 0 .2rem #2900017b !important;
     background-color: #290001 !important;
 }
@@ -36,4 +35,12 @@ form {
     background-color: #290001;
     box-shadow: 0 0 0 .2rem #2900017b;
     border-color: #290001;
+}
+
+.was-validated .form-check-input:valid~.form-check-label{
+    color: white;
+}
+
+.check {
+    color: red;
 }

@@ -1,13 +1,42 @@
 import React from "react";
 import Header from "./components/Header";
+import { useState } from "react";
 import "./AddCafe.css";
 
 function AddCafe() {
+  const [validated, setValidated] = useState("");
+
+  function AddNewCafe(e) {
+    e.preventDefault();
+
+    let name = e.target.name.value;
+    let location = e.target.location.value;
+    let map_url = e.target.map_url.value;
+    let image_url = e.target.image_url.value;
+    let wifi = e.target.wifi.checked;
+    let socket = e.target.socket.checked;
+    let toilet = e.target.toilet.checked;
+    let take_calls = e.target.take_calls.checked;
+    let seats = e.target.seats.value;
+    let price = e.target.price.value;
+
+    console.log(`name: ${name}, 
+   location: ${location},
+   map_url: ${map_url},
+   image_url: ${image_url},
+   wifi: ${wifi}, 
+   socket: ${socket},
+   toilet: ${toilet}, 
+   take_calls: ${take_calls},
+   seats: ${seats},
+   price: ${price}`);
+  }
+
   return (
     <>
       <Header />
       <div>
-        <form>
+        <form id="form" onSubmit={(e) => AddNewCafe(e)} className={validated}>
           <div>
             <label htmlFor="name" className="form-label">
               Name
@@ -17,9 +46,8 @@ function AddCafe() {
               className="form-control"
               id="name"
               placeholder="Cafe"
-              required=""
+              required
             />
-            <div className="invalid-feedback">Name is required</div>
           </div>
           <br></br>
           <div>
@@ -31,37 +59,34 @@ function AddCafe() {
               className="form-control"
               id="location"
               placeholder="City"
-              required=""
+              required
             />
-            <div className="invalid-feedback">Location is required</div>
           </div>
           <br></br>
           <div>
-            <label htmlFor="map-url" className="form-label">
+            <label htmlFor="map_url" className="form-label">
               Google Map - URL
             </label>
             <input
               type="text"
               className="form-control"
-              id="map-url"
+              id="map_url"
               placeholder="https://goo.gl/maps/KhaRRaNjndbmGmsS8"
-              required=""
+              required
             />
-            <div className="invalid-feedback">Google Map - URL is required</div>
           </div>
           <br></br>
           <div>
-            <label htmlFor="image-url" className="form-label">
+            <label htmlFor="image_url" className="form-label">
               Image - URL
             </label>
             <input
               type="text"
               className="form-control"
-              id="image-url"
+              id="image_url"
               placeholder="https://www.example.com/image"
-              required=""
+              required
             />
-            <div className="invalid-feedback">Image - URL is required</div>
           </div>
           <hr className="my-4"></hr>
           <div className="form-check">
@@ -86,9 +111,9 @@ function AddCafe() {
             <input
               type="checkbox"
               className="form-check-input"
-              id="take-calls"
+              id="take_calls"
             />
-            <label className="form-check-label" htmlFor="take-calls">
+            <label className="form-check-label" htmlFor="take_calls">
               Take Calls
             </label>
           </div>
@@ -102,9 +127,8 @@ function AddCafe() {
               className="form-control"
               id="seats"
               placeholder="20-30"
-              required=""
+              required
             />
-            <div className="invalid-feedback">Seats is required</div>
           </div>
           <br></br>
           <div>
@@ -116,12 +140,15 @@ function AddCafe() {
               className="form-control"
               id="price"
               placeholder="$2.50"
-              required=""
+              required
             />
-            <div className="invalid-feedback">Coffee Price is required</div>
           </div>
           <br></br>
-          <button className="w-100 btn btn-primary btn-lg" type="submit">
+          <button
+            className="w-100 btn btn-primary btn-lg"
+            type="submit"
+            onClick={() => setValidated("was-validated")}
+          >
             Add Cafe
           </button>
         </form>
