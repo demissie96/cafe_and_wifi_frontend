@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function EditCafe() {
   const [validated, setValidated] = useState(""); // For validation check.
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   // Get the id number from the url.
   var id = parseInt(window.location.href.split("edit-cafe/")[1]);
@@ -44,68 +44,54 @@ function EditCafe() {
   }, []);
 
   // Send updated data into the database.
+
   function UpdateCafe(e) {
     e.preventDefault();
+
+    let name = e.target.name.value;
+    let location = e.target.location.value;
+    let map_url = e.target.map_url.value;
+    let image_url = e.target.image_url.value;
+    let wifi = e.target.wifi.checked;
+    let socket = e.target.socket.checked;
+    let toilet = e.target.toilet.checked;
+    let take_calls = e.target.take_calls.checked;
+    let seats = e.target.seats.value;
+    let price = e.target.price.value;
+
+    axios
+      .put(
+        "http://localhost:8080/",
+        {},
+        {
+          headers: {
+            id: id,
+            name: name,
+            location: location,
+            map_url: map_url,
+            img_url: image_url,
+            has_wifi: wifi ? 1 : 0,
+            has_sockets: socket ? 1 : 0,
+            has_toilet: toilet ? 1 : 0,
+            can_take_calls: take_calls ? 1 : 0,
+            seats: seats,
+            coffee_price: price,
+          },
+        }
+      )
+      .then(function (response) {
+        if (response.data === "already added") {
+          var nameInput = document.getElementById("name");
+          nameInput.focus();
+          setTimeout(() => {
+            alert(`"${name}" cafe is already in the database.`);
+            nameInput.value = "";
+          }, 500);
+        } else {
+          navigate("/");
+        }
+      });
   }
-
-  // function AddNewCafe(e) {
-  //   e.preventDefault();
-
-  //   let name = e.target.name.value;
-  //   let location = e.target.location.value;
-  //   let map_url = e.target.map_url.value;
-  //   let image_url = e.target.image_url.value;
-  //   let wifi = e.target.wifi.checked;
-  //   let socket = e.target.socket.checked;
-  //   let toilet = e.target.toilet.checked;
-  //   let take_calls = e.target.take_calls.checked;
-  //   let seats = e.target.seats.value;
-  //   let price = e.target.price.value;
-
-  //   console.log(`name: ${name},
-  //    location: ${location},
-  //    map_url: ${map_url},
-  //    image_url: ${image_url},
-  //    wifi: ${wifi},
-  //    socket: ${socket},
-  //    toilet: ${toilet},
-  //    take_calls: ${take_calls},
-  //    seats: ${seats},
-  //    price: ${price}`);
-
-  // axios
-  //   .post(
-  //     "http://localhost:8080/",
-  //     {},
-  //     {
-  //       headers: {
-  //         name: name,
-  //         location: location,
-  //         map_url: map_url,
-  //         img_url: image_url,
-  //         has_wifi: wifi ? 1 : 0,
-  //         has_sockets: socket ? 1 : 0,
-  //         has_toilet: toilet ? 1 : 0,
-  //         can_take_calls: take_calls ? 1 : 0,
-  //         seats: seats,
-  //         coffee_price: price,
-  //       },
-  //     }
-  //   )
-  //   .then(function (response) {
-  //     console.log("response: ********************");
-  //     console.log(response.data);
-  //     if (response.data === "already added") {
-  //       var nameInput = document.getElementById("name");
-  //       nameInput.focus();
-  //       setTimeout(() => {
-  //         alert(`"${name}" cafe is already in the database.`);
-  //         nameInput.value = "";
-  //       }, 500);
-  //     } else {
-  //       navigate("/");
-  //     }
-  //   });
 
   return (
     <>
