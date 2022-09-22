@@ -11,7 +11,7 @@ export default function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="add-cafe" element={<AddCafe />} />
-        <Route path="edit-cafe" element={<EditCafe />} />
+        <Route path="edit-cafe/*" element={<EditCafe />} />
       </Routes>
     </BrowserRouter>
   );

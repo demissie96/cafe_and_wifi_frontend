@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 var data;
@@ -10,6 +11,8 @@ var dataList;
 function Home() {
   // For render cafe list
   const [cafeList, setCafeList] = useState("");
+  // For navigating among pages
+  const navigate = useNavigate();
 
   function GetCafeList() {
     axios.get("http://localhost:8080/").then(function (response) {
@@ -30,7 +33,10 @@ function Home() {
               <button
                 target="_blank"
                 title="Edit"
-                onClick={() => console.log(`id: ${element.id} was clicked`)}
+                onClick={() => {
+                  console.log(`id: ${element.id} was clicked`);
+                  navigate(`edit-cafe/${element.id}`);
+                }}
               >
                 📝
               </button>
@@ -99,7 +105,7 @@ function Home() {
 
   return (
     <>
-      <Header visibility="visible"/>
+      <Header visibility="visible" />
       <div id="cafe-list" style={{ margin: "80px 20px 20px" }}>
         <div>{cafeList}</div>
       </div>
