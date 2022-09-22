@@ -5,6 +5,8 @@ import axios from "axios";
 import "./AddCafe.css";
 import { useNavigate } from "react-router-dom";
 
+const apiURL = "https://cafeandwifibackend.johannesdemissi.repl.co";
+
 function AddCafe() {
   const [validated, setValidated] = useState("");
   const navigate = useNavigate();
@@ -25,7 +27,7 @@ function AddCafe() {
 
     axios
       .post(
-        "http://localhost:8080/",
+        apiURL,
         {},
         {
           headers: {

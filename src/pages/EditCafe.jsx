@@ -5,6 +5,8 @@ import axios from "axios";
 import "./AddCafe.css";
 import { useNavigate } from "react-router-dom";
 
+const apiURL = "https://cafeandwifibackend.johannesdemissi.repl.co";
+
 function EditCafe() {
   const [validated, setValidated] = useState(""); // For validation check.
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ function EditCafe() {
 
   function LoadData(cafe_id) {
     axios
-      .get("http://localhost:8080/get-selected", {
+      .get(`${apiURL}/get-selected`, {
         headers: {
           id: cafe_id,
         },
@@ -62,7 +64,7 @@ function EditCafe() {
 
     axios
       .put(
-        "http://localhost:8080/",
+        apiURL,
         {},
         {
           headers: {

@@ -1,7 +1,8 @@
 import axios from "axios";
+const apiURL = "https://cafeandwifibackend.johannesdemissi.repl.co";
 
 export function ResetDatabase() {
-  axios.get("http://localhost:8080/reset").then(function (response) {
+  axios.get(`${apiURL}/reset`).then(function (response) {
     window.location.reload();
   });
 }

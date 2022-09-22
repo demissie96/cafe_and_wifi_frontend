@@ -7,6 +7,7 @@ import "./Home.css";
 
 var data;
 var dataList;
+const apiURL = "https://cafeandwifibackend.johannesdemissi.repl.co";
 
 function Home() {
   // For render cafe list
@@ -15,7 +16,7 @@ function Home() {
   const navigate = useNavigate();
 
   function GetCafeList() {
-    axios.get("http://localhost:8080/").then(function (response) {
+    axios.get(apiURL).then(function (response) {
       data = response.data;
       dataList = data.map((element) => {
         return (
@@ -90,7 +91,7 @@ function Home() {
 
   function DeleteCafe(id) {
     axios
-      .delete("http://localhost:8080/", {
+      .delete(apiURL, {
         headers: {
           id: id,
         },
