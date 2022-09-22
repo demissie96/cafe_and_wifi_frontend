@@ -65,12 +65,22 @@ function Header(props) {
                 </button>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="https://github.com/demissie96/cafe_and_wifi_backend">
+                    <a
+                      className="dropdown-item"
+                      href="https://github.com/demissie96/cafe_and_wifi_backend"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Backend (Node.js)
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="https://github.com/demissie96/cafe_and_wifi_frontend">
+                    <a
+                      className="dropdown-item"
+                      href="https://github.com/demissie96/cafe_and_wifi_frontend"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Frontend (React)
                     </a>
                   </li>
