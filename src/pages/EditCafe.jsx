@@ -41,6 +41,7 @@ function EditCafe() {
   // On first render load data into the form.
   useEffect(() => {
     LoadData(id);
+    // eslint-disable-next-line
   }, []);
 
   // Send updated data into the database.

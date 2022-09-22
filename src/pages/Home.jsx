@@ -47,7 +47,11 @@ function Home() {
             </div>
             <div className="col-md-3 themed-grid-col">
               <div className="second-box">
-                <a target="_blank" href={element.map_url}>
+                <a
+                  target="_blank"
+                  href={element.map_url}
+                  rel="noopener noreferrer"
+                >
                   Google Map
                 </a>
                 <div id="cafe-location">{element.location}</div>
@@ -65,7 +69,11 @@ function Home() {
             </div>
             <div className="col-md-3 themed-grid-col">
               <div className="fourth-box">
-                <a target="_blank" href={element.img_url}>
+                <a
+                  target="_blank"
+                  href={element.img_url}
+                  rel="noopener noreferrer"
+                >
                   Image
                 </a>
 
@@ -74,9 +82,6 @@ function Home() {
               </div>
             </div>
           </div>
-          // <div className="cafe-box" key={element.id}>
-
-          // </div>
         );
       });
       setCafeList(dataList);
@@ -97,6 +102,7 @@ function Home() {
 
   useEffect(() => {
     GetCafeList();
+    // eslint-disable-next-line
   }, []);
 
   return (
