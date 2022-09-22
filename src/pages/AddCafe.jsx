@@ -55,14 +55,23 @@ function AddCafe() {
       )
       .then(function (response) {
         console.log("response: ********************");
-        console.log(response);
-        navigate("/");
+        console.log(response.data);
+        if (response.data === "already added") {
+          var nameInput = document.getElementById("name");
+          nameInput.focus();
+          setTimeout(() => {
+            alert(`"${name}" cafe is already in the database.`);
+            nameInput.value = "";
+          }, 500);
+        } else {
+          navigate("/");
+        }
       });
   }
 
   return (
     <>
-      <Header visibility="hidden"/>
+      <Header visibility="hidden" />
       <div>
         <form id="form" onSubmit={(e) => AddNewCafe(e)} className={validated}>
           <div>
