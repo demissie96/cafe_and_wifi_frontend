@@ -1,5 +1,5 @@
 import axios from "axios";
-const apiURL = "https://cafeandwifibackend.johannesdemissi.repl.co";
+const apiURL = process.env.REACT_APP_BACKEND_URL;
 
 export function ResetDatabase() {
   axios.get(`${apiURL}/reset`).then(function (response) {

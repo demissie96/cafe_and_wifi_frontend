@@ -5,7 +5,7 @@ import axios from "axios";
 import "./AddCafe.css";
 import { useNavigate } from "react-router-dom";
 
-const apiURL = "https://cafeandwifibackend.johannesdemissi.repl.co";
+const apiURL = process.env.REACT_APP_BACKEND_URL;
 
 function AddCafe() {
   const [validated, setValidated] = useState("");

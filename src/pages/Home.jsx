@@ -7,7 +7,7 @@ import "./Home.css";
 
 var data;
 var dataList;
-const apiURL = "https://cafeandwifibackend.johannesdemissi.repl.co";
+const apiURL = process.env.REACT_APP_BACKEND_URL;
 
 function Home() {
   // For render cafe list
