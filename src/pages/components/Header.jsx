@@ -56,22 +56,21 @@ function Header(props) {
                 </button>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <button
                   className="nav-link dropdown-toggle"
-                  href="#"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   GitHub Source Code
-                </a>
+                </button>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="https://github.com/demissie96/cafe_and_wifi_backend">
                       Backend (Node.js)
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="https://github.com/demissie96/cafe_and_wifi_frontend">
                       Frontend (React)
                     </a>
                   </li>
