@@ -17,7 +17,6 @@ function Home() {
   function GetCafeList() {
     axios.get("http://localhost:8080/").then(function (response) {
       data = response.data;
-      console.log(data);
       dataList = data.map((element) => {
         return (
           <div className="row mb-3 text-center cafe-box" key={element.id}>
@@ -34,7 +33,6 @@ function Home() {
                 target="_blank"
                 title="Edit"
                 onClick={() => {
-                  console.log(`id: ${element.id} was clicked`);
                   navigate(`edit-cafe/${element.id}`);
                 }}
               >
@@ -86,7 +84,6 @@ function Home() {
   }
 
   function DeleteCafe(id) {
-    console.log(`Delete element ${id}`);
     axios
       .delete("http://localhost:8080/", {
         headers: {
@@ -94,7 +91,6 @@ function Home() {
         },
       })
       .then(function (response) {
-        console.log(response.data);
         GetCafeList();
       });
   }

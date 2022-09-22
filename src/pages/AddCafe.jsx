@@ -23,17 +23,6 @@ function AddCafe() {
     let seats = e.target.seats.value;
     let price = e.target.price.value;
 
-    console.log(`name: ${name},
-     location: ${location},
-     map_url: ${map_url},
-     image_url: ${image_url},
-     wifi: ${wifi},
-     socket: ${socket},
-     toilet: ${toilet},
-     take_calls: ${take_calls},
-     seats: ${seats},
-     price: ${price}`);
-
     axios
       .post(
         "http://localhost:8080/",
@@ -54,8 +43,6 @@ function AddCafe() {
         }
       )
       .then(function (response) {
-        console.log("response: ********************");
-        console.log(response.data);
         if (response.data === "already added") {
           var nameInput = document.getElementById("name");
           nameInput.focus();
